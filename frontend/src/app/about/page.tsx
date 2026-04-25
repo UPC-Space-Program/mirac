@@ -18,6 +18,25 @@ export default function About() {
         <p style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#444' }}>
           By creating a unified, intelligent dashboard, we provide authorities, environmental agencies, and the public with transparent, actionable insights. We believe that with the right data, we can trace pollution events back to their source, hold responsible parties accountable, and ultimately prevent environmental degradation before it's too late.
         </p>
+
+        <h2 style={{ color: 'var(--secondary-blue)', marginTop: '2rem' }}>Meet the Team</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '1.5rem', marginTop: '1rem' }}>
+          {[
+            { name: "Anna Pujol", role: "Lead Data Scientist" },
+            { name: "Marc Ferrer", role: "Environmental Engineer" },
+            { name: "Laura Gómez", role: "Backend Developer" },
+            { name: "Pau Casals", role: "UI/UX Designer" },
+            { name: "Elena Riera", role: "GIS Specialist" }
+          ].map((member, i) => (
+            <div key={i} style={{ padding: '1.5rem', background: '#f5f7fa', borderRadius: '8px', textAlign: 'center', border: '1px solid #eaeaea' }}>
+              <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'var(--primary-blue)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem', fontWeight: 'bold', margin: '0 auto 1rem auto' }}>
+                {member.name.charAt(0)}
+              </div>
+              <h3 style={{ fontSize: '1.1rem', color: 'var(--primary-blue)', marginBottom: '0.25rem' }}>{member.name}</h3>
+              <div style={{ fontSize: '0.9rem', color: '#666' }}>{member.role}</div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
