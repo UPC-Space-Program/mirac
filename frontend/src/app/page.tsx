@@ -8,10 +8,11 @@ export default function Home() {
       <section style={{ 
         position: 'relative', 
         minHeight: '80vh', 
-        display: 'flex', 
+        display: 'grid', 
+        gridTemplateColumns: '1fr 1fr',
         alignItems: 'center', 
-        justifyContent: 'center',
-        padding: '4rem 2rem',
+        padding: '4rem 4rem',
+        gap: '4rem',
         overflow: 'hidden'
       }}>
         {/* Background Image */}
@@ -27,22 +28,27 @@ export default function Home() {
         {/* Overlay for readability */}
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.85)', zIndex: -1 }}></div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', maxWidth: '800px', zIndex: 1 }}>
+        {/* Left: Logo */}
+        <div style={{ zIndex: 1, display: 'flex', justifyContent: 'flex-end' }}>
           <Image 
             src="/Logo_MIRAC.png" 
             alt="MIRAC Big Logo" 
             width={600} 
             height={200}
             priority
-            style={{ objectFit: 'contain', width: '100%', height: 'auto' }}
+            style={{ objectFit: 'contain', width: '100%', maxWidth: '500px', height: 'auto' }}
           />
-          <h1 style={{ fontSize: '2.5rem', color: 'var(--primary-blue)', marginTop: '2rem', marginBottom: '1rem' }}>
+        </div>
+
+        {/* Right: Content */}
+        <div style={{ zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left' }}>
+          <h1 style={{ fontSize: '3rem', color: 'var(--primary-blue)', marginBottom: '1rem', lineHeight: 1.2 }}>
             Monitorització Intel·ligent de Rius i Aigües Catalanes
           </h1>
-          <p style={{ fontSize: '1.2rem', color: '#444', lineHeight: 1.6, marginBottom: '2rem' }}>
+          <p style={{ fontSize: '1.2rem', color: '#444', lineHeight: 1.6, marginBottom: '2rem', maxWidth: '500px' }}>
             A comprehensive, satellite-powered monitoring platform ensuring the health and safety of Catalonia's vital river ecosystems.
           </p>
-          <a href="#demo" className="btn-primary" style={{ marginTop: '1rem', display: 'inline-flex', padding: '0.75rem 2rem', fontSize: '1.1rem' }}>
+          <a href="#demo" className="btn-primary" style={{ display: 'inline-flex', padding: '0.75rem 2rem', fontSize: '1.1rem' }}>
             See How It Works
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
