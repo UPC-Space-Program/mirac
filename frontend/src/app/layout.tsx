@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "MIRAC - Smart Monitoring of Catalan Rivers",
-  description: "Monitorització Intel·ligent de Rius i Aigües Catalanes",
+  description: "Monitoratge Intel·ligent de Rius i Aigües Catalanes",
 };
 
 export default function RootLayout({

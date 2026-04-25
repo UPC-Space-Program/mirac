@@ -5,22 +5,22 @@ export default function Home() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
       {/* Hero Section */}
-      <section style={{ 
-        position: 'relative', 
-        minHeight: '80vh', 
-        display: 'grid', 
+      <section style={{
+        position: 'relative',
+        minHeight: '90vh',
+        display: 'grid',
         gridTemplateColumns: '1fr 1fr',
-        alignItems: 'center', 
+        alignItems: 'center',
         padding: '4rem 4rem',
         gap: '4rem',
         overflow: 'hidden'
       }}>
         {/* Background Image */}
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -2 }}>
-          <Image 
-            src="/bg.png" 
-            alt="River Background" 
-            fill 
+          <Image
+            src="/bg.png"
+            alt="River Background"
+            fill
             style={{ objectFit: 'cover' }}
             priority
           />
@@ -30,10 +30,10 @@ export default function Home() {
 
         {/* Left: Logo */}
         <div style={{ zIndex: 1, display: 'flex', justifyContent: 'flex-end' }}>
-          <Image 
-            src="/Logo_MIRAC.png" 
-            alt="MIRAC Big Logo" 
-            width={600} 
+          <Image
+            src="/Logo_MIRAC.png"
+            alt="MIRAC Big Logo"
+            width={600}
             height={200}
             priority
             style={{ objectFit: 'contain', width: '100%', maxWidth: '500px', height: 'auto' }}
@@ -43,7 +43,7 @@ export default function Home() {
         {/* Right: Content */}
         <div style={{ zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left' }}>
           <h1 style={{ fontSize: '3rem', color: 'var(--primary-blue)', marginBottom: '1rem', lineHeight: 1.2 }}>
-            Monitorització Intel·ligent de Rius i Aigües Catalanes
+            Monitoratge Intel·ligent de Rius i Aigües Catalanes
           </h1>
           <p style={{ fontSize: '1.2rem', color: '#444', lineHeight: 1.6, marginBottom: '2rem', maxWidth: '500px' }}>
             A comprehensive, satellite-powered monitoring platform ensuring the health and safety of Catalonia's vital river ecosystems.
@@ -67,7 +67,7 @@ export default function Home() {
 
         {/* Mock Dashboard UI */}
         <div style={{ width: '100%', maxWidth: '1200px', background: 'white', borderRadius: '16px', boxShadow: '0 10px 40px rgba(0,0,0,0.1)', overflow: 'hidden', border: '1px solid #eaeaea' }}>
-          
+
           {/* Mock Header */}
           <div style={{ background: 'var(--primary-blue)', padding: '1rem 2rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <div style={{ display: 'flex', gap: '0.5rem' }}>
@@ -105,23 +105,23 @@ export default function Home() {
 
             {/* Mock Right Panel (Map Image) */}
             <div style={{ position: 'relative', background: '#eaeaea', borderRadius: '8px', overflow: 'hidden', minHeight: '400px' }}>
-               <Image 
-                  src="/llobregat.png" 
-                  alt="Satellite mock view" 
-                  fill
-                  style={{ objectFit: 'cover' }}
-               />
-               {/* Scanning Overlay Line */}
-               <div style={{
-                 position: 'absolute',
-                 top: 0,
-                 left: 0,
-                 width: '100%',
-                 height: '4px',
-                 background: 'rgba(52, 168, 83, 0.8)',
-                 boxShadow: '0 0 15px rgba(52, 168, 83, 0.8)',
-                 animation: 'slideBar 3s infinite linear alternate'
-               }}></div>
+              <Image
+                src="/llobregat.png"
+                alt="Satellite mock view"
+                fill
+                style={{ objectFit: 'cover' }}
+              />
+              {/* Scanning Overlay Line */}
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '4px',
+                background: 'rgba(52, 168, 83, 0.8)',
+                boxShadow: '0 0 15px rgba(52, 168, 83, 0.8)',
+                animation: 'slideBar 3s infinite linear alternate'
+              }}></div>
             </div>
           </div>
         </div>
