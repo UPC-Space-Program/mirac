@@ -9,8 +9,10 @@ git pull
 
 echo "### Rebuilding containers..."
 # This ensures that 'frontend' and 'backend' are rebuilt with the latest code
-docker compose build
-docker compose up -d
+# --no-cache forces a completely clean image build from the new git code
+docker compose build --no-cache
+# -V (--renew-anon-volumes) prevents Docker from serving the old cached Next.js build volume
+docker compose up -d --force-recreate -V
 
 echo "### Check SSL Certificates..."
 if [ -f "$CERT_PATH" ]; then
@@ -19,7 +21,8 @@ if [ -f "$CERT_PATH" ]; then
   # -d: Detached mode
   # --remove-orphans: Cleanup old containers
   # --force-recreate: Ensure we use the new image even if config didn't change
-  docker compose up -d --remove-orphans --force-recreate
+  # -V: Renew anonymous volumes to clear Next.js cache
+  docker compose up -d --remove-orphans --force-recreate -V
   
   echo "### Deployment Complete! ###"
   echo "Your site should be live at https://$DOMAIN"
