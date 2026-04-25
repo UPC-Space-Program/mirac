@@ -34,7 +34,7 @@ export default function About() {
             <div>
               <h2 style={{ color: 'var(--secondary-blue)', marginBottom: '1rem', fontSize: '1.8rem' }}>Our Story</h2>
               <p style={{ fontSize: '1.1rem', lineHeight: 1.8, color: '#555' }}>
-                Founded by a team of environmental scientists and data engineers, MIRAC was born out of a critical need to protect the rich biodiversity of Catalonia's rivers and coastline. We recognized that while water processing plants play a vital role in sanitation, heavy rainfall events often overwhelm their capacity, leading to untracked discharges of polluted water into our delicate ecosystems.
+                Founded by a team of Aerospace Engineers, MIRAC was born out of a critical need to protect the rich biodiversity of Catalonia's rivers and coastline. We recognized that while water processing plants play a vital role in sanitation, heavy rainfall events often overwhelm their capacity, leading to untracked discharges of polluted water into our delicate ecosystems.
               </p>
             </div>
 
