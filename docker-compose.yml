@@ -1,0 +1,39 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: mirac_user
+      POSTGRES_PASSWORD: mirac_password
+      POSTGRES_DB: mirac_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://mirac_user:mirac_password@db:5432/mirac_db
+    depends_on:
+      - db
+    volumes:
+      - ./backend:/app
+      - ./AIGUA_DEPURADORES.gml:/app/AIGUA_DEPURADORES.gml
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:5000/api
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+
+volumes:
+  postgres_data:
