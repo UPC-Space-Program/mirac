@@ -179,6 +179,20 @@ body {
   background-color: #1a2e47;
 }
 
+.btn-submit:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.cause-card {
+  transition: all 0.2s ease;
+}
+
+.cause-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
 .dashboard-container {
   padding: 2rem;
   flex: 1;

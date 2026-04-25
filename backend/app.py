@@ -111,40 +111,62 @@ def login():
         return jsonify({"error": "Invalid email or password"}), 401
         
     session.close()
-    return jsonify({"message": "Logged in successfully", "token": "mock-jwt-token"})
+    return jsonify({"message": "Logged in successfully", "token": email})
+
+@app.route('/api/change-password', methods=['POST'])
+def change_password():
+    data = request.json
+    email = data.get('email')
+    new_password = data.get('new_password')
+    if not email or not new_password:
+        return jsonify({"error": "Email and new password required"}), 400
+        
+    session = Session()
+    user = session.query(User).filter_by(email=email).first()
+    if not user:
+        session.close()
+        return jsonify({"error": "User not found"}), 404
+        
+    user.password = generate_password_hash(new_password)
+    session.commit()
+    session.close()
+    return jsonify({"message": "Password updated successfully"})
 
 @app.route('/api/dashboard', methods=['GET'])
 def dashboard():
+    river = request.args.get('river', 'Llobregat')
     session = Session()
-    plants = session.query(Plant).limit(10).all()
+    plants = session.query(Plant).limit(20).all()
     session.close()
     
-    river_mouths = [
-        {"id": 1, "name": "Llobregat River Mouth", "status": "Polluted", "pollutionLevel": 0.8},
-        {"id": 2, "name": "Besòs River Mouth", "status": "Clean", "pollutionLevel": 0.2},
-        {"id": 3, "name": "Ter River Mouth", "status": "Warning", "pollutionLevel": 0.6},
-        {"id": 4, "name": "Ebre River Mouth", "status": "Clean", "pollutionLevel": 0.1},
-        {"id": 5, "name": "Francolí River Mouth", "status": "Polluted", "pollutionLevel": 0.9},
-    ]
+    # Mock data depending on the river
+    status = "Polluted" if river in ["Llobregat", "Francoli"] else "Clean"
     
-    # Assign a random plant as the source of pollution for polluted mouths
-    results = []
-    for mouth in river_mouths:
-        source = None
-        if mouth["status"] in ["Polluted", "Warning"] and plants:
+    sensors = {
+        "temperature": {"value": round(random.uniform(15, 25), 1), "min": 10, "max": 20, "unit": "°C"},
+        "caudal": {"value": round(random.uniform(5, 50), 1), "min": 10, "max": 100, "unit": "m³/s"},
+        "pH": {"value": round(random.uniform(6.5, 8.5), 1), "min": 6.5, "max": 9.0, "unit": ""}
+    }
+    
+    possible_causes = []
+    if status == "Polluted" and plants:
+        for i in range(3):
             plant = random.choice(plants)
-            source = {
+            possible_causes.append({
                 "name": plant.name,
                 "municipality": plant.municipality,
-                "confidence": round(random.uniform(0.7, 0.99), 2),
-                "reason": "Copernicus satellite detected anomaly correlating with recent heavy rainfall in the area."
-            }
-        results.append({
-            "mouth": mouth,
-            "source": source
-        })
+                "confidence": round(random.uniform(0.6, 0.99), 2),
+                "reason": "Copernicus anomaly + recent rainfall"
+            })
+        possible_causes.sort(key=lambda x: x["confidence"], reverse=True)
         
-    return jsonify(results)
+    return jsonify({
+        "river": river,
+        "status": status,
+        "sensors": sensors,
+        "possible_causes": possible_causes
+    })
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

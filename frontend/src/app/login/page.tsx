@@ -35,6 +35,8 @@ export default function Login() {
 
       if (isLogin) {
         localStorage.setItem("token", data.token);
+        // Set a cookie so it persists across sessions and is easily readable
+        document.cookie = `token=${data.token}; path=/; max-age=86400; SameSite=Strict`;
         router.push("/dashboard");
       } else {
         setSuccess("Registration successful! You can now log in.");
