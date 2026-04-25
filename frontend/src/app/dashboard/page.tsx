@@ -32,7 +32,7 @@ export default function Dashboard() {
 
     const fetchData = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/dashboard`);
+        const res = await fetch(`/api/dashboard`);
         const result = await res.json();
         setData(result);
       } catch (err) {
