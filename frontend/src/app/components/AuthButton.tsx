@@ -24,6 +24,7 @@ export default function AuthButton() {
   if (isLoggedIn) {
     return (
       <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Link href="/dashboard" style={{ color: 'white', marginRight: '1rem', textDecoration: 'none', fontWeight: 'bold' }}>Dashboard</Link>
         <Link href="/change-password" title="Change Password" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'var(--primary-blue)', color: 'white', padding: '0.5rem 1rem', borderRadius: '24px', textDecoration: 'none' }}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>

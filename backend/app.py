@@ -144,19 +144,26 @@ def dashboard():
     
     sensors = {
         "temperature": {"value": round(random.uniform(15, 25), 1), "min": 10, "max": 20, "unit": "°C"},
-        "caudal": {"value": round(random.uniform(5, 50), 1), "min": 10, "max": 100, "unit": "m³/s"},
+        "flow rate": {"value": round(random.uniform(5, 50), 1), "min": 10, "max": 100, "unit": "m³/s"},
         "pH": {"value": round(random.uniform(6.5, 8.5), 1), "min": 6.5, "max": 9.0, "unit": ""}
     }
     
     possible_causes = []
     if status == "Polluted" and plants:
+        # One high confidence, two low confidences
+        confidences = [
+            round(random.uniform(0.90, 0.99), 2),
+            round(random.uniform(0.15, 0.35), 2),
+            round(random.uniform(0.05, 0.15), 2)
+        ]
+        
         for i in range(3):
             plant = random.choice(plants)
             possible_causes.append({
                 "name": plant.name,
                 "municipality": plant.municipality,
-                "confidence": round(random.uniform(0.6, 0.99), 2),
-                "reason": "Copernicus anomaly + recent rainfall"
+                "confidence": confidences[i],
+                "reason": "High correlation with Copernicus anomaly & recent rainfall" if i == 0 else "Minor correlation detected"
             })
         possible_causes.sort(key=lambda x: x["confidence"], reverse=True)
         

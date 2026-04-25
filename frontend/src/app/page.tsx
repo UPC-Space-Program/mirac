@@ -6,11 +6,12 @@ export default function Home() {
     <section className="hero-section" id="home">
       <div className="hero-image">
         <Image 
-          src="/mirac_logo.png" 
+          src="/Logo.png" 
           alt="MIRAC Big Logo" 
-          width={500} 
-          height={500}
+          width={600} 
+          height={200}
           priority
+          style={{ objectFit: 'contain', width: '100%', height: 'auto', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.1))' }}
         />
       </div>
       <div className="hero-content">
