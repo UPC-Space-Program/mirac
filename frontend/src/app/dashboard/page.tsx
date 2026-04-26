@@ -105,7 +105,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div style={{ display: "grid", gap: "1.5rem", padding: "1.5rem", maxWidth: "1600px", margin: "0 auto" }} className="dashboard-main-grid">
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "1.5rem", padding: "1.5rem", maxWidth: "1600px", margin: "0 auto", height: "calc(100vh - 80px)" }} className="dashboard-main-grid">
       
       {/* Left Column */}
       <div style={{ display: "flex", flexDirection: "column", gap: "1rem", overflowY: "auto", paddingRight: "0.5rem" }}>
@@ -148,7 +148,7 @@ export default function Dashboard() {
         {/* Satellite Data Insights */}
         <div style={{ background: "white", padding: "1.5rem", borderRadius: "10px", boxShadow: "0 2px 10px rgba(0,0,0,0.05)", flexShrink: 0 }}>
           <h2 style={{ color: "var(--primary-blue)", marginBottom: "1rem", borderBottom: "1px solid #eee", paddingBottom: "0.5rem", fontSize: "1.2rem" }}>Satellite Data Insights</h2>
-          <div style={{ display: "grid", gap: "0.5rem" }} className="three-col-grid">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "0.5rem" }} className="three-col-grid">
             <div style={{ background: "#f5f7fa", padding: "1rem", borderRadius: "8px", textAlign: "center", border: "1px solid #eee" }}>
               <div style={{ fontSize: "0.8rem", color: "#666", marginBottom: "0.5rem" }}>Turbidity Level</div>
               <strong style={{ color: data.satellite_insights.turbidity === "High" ? "#e74c3c" : "var(--accent-green)" }}>{data.satellite_insights.turbidity}</strong>
