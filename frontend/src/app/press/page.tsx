@@ -27,7 +27,7 @@ export default function Press() {
       </section>
 
       {/* Content Section */}
-      <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9', display: 'flex', justifyContent: 'center' }}>
+      <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9', display: 'flex', justifyContent: 'center' }} className="about-press-grid">
         <div style={{ maxWidth: '1000px', width: '100%' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             <article style={{ background: 'white', padding: '2rem', borderRadius: '16px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)', borderTop: '4px solid var(--secondary-blue)', display: 'flex', flexDirection: 'column', transition: 'transform 0.2s ease' }} className="cause-card">

@@ -7,14 +7,14 @@ export default function Home() {
       {/* Hero Section */}
       <section style={{
         position: 'relative',
-        minHeight: '90vh',
+        minHeight: '80vh',
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
         alignItems: 'center',
         padding: '4rem 4rem',
         gap: '4rem',
         overflow: 'hidden'
-      }}>
+      }} className="hero-grid">
         {/* Background Image */}
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -2 }}>
           <Image
@@ -78,7 +78,7 @@ export default function Home() {
             <div style={{ color: 'white', fontSize: '0.9rem', opacity: 0.8, marginLeft: '1rem' }}>mirac-platform.cat / dashboard</div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '2rem', padding: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '2rem', padding: '2rem' }} className="demo-grid">
             {/* Mock Left Panel */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               <div style={{ background: '#f5f7fa', padding: '1.5rem', borderRadius: '8px' }}>
@@ -104,7 +104,7 @@ export default function Home() {
             </div>
 
             {/* Mock Right Panel (Map Image) */}
-            <div style={{ position: 'relative', background: '#eaeaea', borderRadius: '8px', overflow: 'hidden', minHeight: '400px' }}>
+            <div style={{ position: 'relative', background: '#eaeaea', borderRadius: '8px', overflow: 'hidden', minHeight: '400px' }} className="dashboard-image-col">
               <Image
                 src="/llobregat.png"
                 alt="Satellite mock view"

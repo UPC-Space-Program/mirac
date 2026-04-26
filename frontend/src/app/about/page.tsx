@@ -27,7 +27,7 @@ export default function About() {
       </section>
 
       {/* Content Section */}
-      <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9', display: 'flex', justifyContent: 'center' }}>
+      <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9', display: 'flex', justifyContent: 'center' }} className="about-press-grid">
         <div style={{ maxWidth: '800px', width: '100%', display: 'flex', flexDirection: 'column', gap: '3rem' }}>
 
           <div style={{ background: 'white', padding: '3rem', borderRadius: '16px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column', gap: '2rem' }}>

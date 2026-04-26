@@ -167,11 +167,18 @@ def dashboard():
             })
         possible_causes.sort(key=lambda x: x["confidence"], reverse=True)
         
+    satellite_insights = {
+        "turbidity": "High" if status == "Polluted" else "Normal",
+        "algae": "Detected" if status == "Polluted" and random.random() > 0.5 else "None",
+        "oil": "Traces" if random.random() > 0.8 else "None"
+    }
+        
     return jsonify({
         "river": river,
         "status": status,
         "sensors": sensors,
-        "possible_causes": possible_causes
+        "possible_causes": possible_causes,
+        "satellite_insights": satellite_insights
     })
 
 
