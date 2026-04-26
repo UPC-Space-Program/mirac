@@ -26,9 +26,9 @@ export default function RootLayout({
               <Image 
                 src="/Logo.png" 
                 alt="MIRAC Logo" 
-                width={160} 
-                height={50} 
-                style={{ objectFit: "contain", width: "auto", height: "45px" }}
+                width={140} 
+                height={35} 
+                style={{ objectFit: "contain", width: "auto", height: "35px" }}
               />
             </Link>
           </div>
