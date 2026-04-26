@@ -177,13 +177,13 @@ export default function Home() {
         </div>
         
         {/* Logos Image */}
-        <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', padding: '0 2rem' }}>
+        <div style={{ marginTop: '4rem', background: 'white', padding: '2rem', borderRadius: '12px', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', maxWidth: '800px' }}>
           <Image 
             src="/Logos.png" 
             alt="Partner Logos" 
             width={800} 
             height={100} 
-            style={{ objectFit: 'contain', width: '100%', maxWidth: '800px', height: 'auto', opacity: 0.9 }} 
+            style={{ objectFit: 'contain', width: '100%', height: 'auto' }} 
           />
         </div>
 
