@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define domain and cert path
-DOMAIN="cassini.joelgarciamartin.com"
+DOMAIN="mirac.upcprogram.space"
 CERT_PATH="./data/certbot/conf/live/$DOMAIN/fullchain.pem"
 
 echo "### Pulling latest changes..."

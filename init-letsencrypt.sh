@@ -1,6 +1,6 @@
 #!/bin/bash
 
-domains=(cassini.joelgarciamartin.com)
+domains=(mirac.upcprogram.space)
 rsa_key_size=4096
 data_path="./data/certbot"
 email="joelg@mit.edu" # Adding a default email based on user path/context, user can change if needed
