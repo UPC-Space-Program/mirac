@@ -127,6 +127,71 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Contact Section */}
+      <section style={{ padding: '6rem 2rem', backgroundColor: 'var(--primary-blue)', color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', textAlign: 'center' }}>Get in Touch</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem', maxWidth: '1000px', width: '100%' }}>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1rem' }}>
+            <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Email Us</h3>
+            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.05rem' }}>
+              <a href="mailto:mirac@upcprogram.space" style={{ color: '#fff', textDecoration: 'underline' }}>mirac@upcprogram.space</a>
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1rem' }}>
+            <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Headquarters</h3>
+            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.05rem', lineHeight: 1.5 }}>
+              Rambla Sant Nebridi 22<br/>
+              Terrassa, Catalonia<br/>
+              Spain
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1rem' }}>
+            <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+            </div>
+            <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Partnerships</h3>
+            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.05rem', lineHeight: 1.5 }}>
+              Working globally with space agencies and environmental NGOs to deploy the MIRAC system.
+            </p>
+          </div>
+
+        </div>
+        
+        {/* Logos Image */}
+        <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', padding: '0 2rem' }}>
+          <Image 
+            src="/Logos.png" 
+            alt="Partner Logos" 
+            width={800} 
+            height={100} 
+            style={{ objectFit: 'contain', width: '100%', maxWidth: '800px', height: 'auto', opacity: 0.9 }} 
+          />
+        </div>
+
+        <div style={{ marginTop: '3rem', opacity: 0.5, fontSize: '0.9rem' }}>
+          &copy; {new Date().getFullYear()} MIRAC Platform. All rights reserved.
+        </div>
+      </section>
+
     </div>
   );
 }
